@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Transaçao - Controle de gastos</title>
+
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <header>
+        <button type="button" class="clear" onclick="logout()">
+            Go out
+        </button>
+    </header>
+    <main class="centralize">
+        <form>
+            <div class="form-field">
+                <div><label>Transaction *</label></div>
+                <input type="radio" name="type" checked id="expense">
+                <label for="expense">Expense</label>
+                <input type="radio" name="type" id="income">
+                <label for="income">Income</label>
+            </div>
+            <div class="form-field">
+                <div><label>Date transaction</label></div>
+                <input type="date" onchange="onChangeDate()" id="date">
+                <div class="error" id="date-required-error">
+                    Date transaction needed!
+                </div>
+            </div>
+            <div class="form-field">
+                <div><label>Type</label></div>
+                <select id="currency">
+                    <option value="USD">Dólar</option>
+                    <option value="EUR">Euro</option>
+                    <option value="BRL" selected>Real</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <div><label>Value</label></div>
+                <input type="number" onchange="onChangeValue()" id="value">
+                <div class="error" id="value-required-error">
+                    Value needed!
+                </div>
+                <div class="error" id="value-less-or-equal-to-zero-error">
+                    Valor deve ser maior que zero
+                </div>
+            </div>
+            <div class="form-field">
+                <div><label>Transection</label></div>
+                <select onchange="onChangeTransactionType()" id="transaction-type">
+                    <option value="">-- Select type of transaction --</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                </select>
+                <div class="error" id="transaction-type-required-error">
+                    Transaction type is required
+                </div>
+            </div>
+            <div class="form-field">
+                <div><label>Description</label></div>
+                <input type="text" id="description">
+            </div>
+            <button type="button" class="solid" disabled id="save-button"
+                onclick="saveTransaction()">
+                save
+            </button>
+            <button type="button" class="clear" onclick="history.back()">Cancel</button>
+        </form>
+    </main>
+</body>
+
+<link rel="stylesheet" href="../../global.css">
+<link rel="stylesheet" href="transaction.css">
+
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+<script src="../../firebase-init.js"></script>
+<script src="../../auth-guard.js"></script>
+<script src="../../loading.js"></script>
+<script src="../../services/transaction.service.js"></script>
+<script src="transaction.js"></script>
+
+</html>

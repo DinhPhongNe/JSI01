@@ -45,6 +45,21 @@ function loginAnonymously() {
         });
 }
 
+// facebook login
+function loginWithFacebook() {
+    showLoading();
+    const provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithPopup(provider)
+        .then(() => {
+            hideLoading();
+            window.location.href = "pages/transaction/transaction.html";
+        })
+        .catch(error => {
+            hideLoading();
+            alert(getErrorMessage(error));
+        });
+}
+
 function recoverPassword() {
     showLoading();
     firebase.auth().sendPasswordResetEmail(form.email().value).then(() => {

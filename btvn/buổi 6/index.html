@@ -43,7 +43,7 @@
           integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
           crossorigin="anonymous"
         ></script>
-        
+
 </head>
 <body class="centralize">
     <form>
@@ -65,10 +65,13 @@
             <button type="button" class="solid" id="login-button" disabled="true" onclick="login()">Login</button>
         </div>
         <div>
+            <button type="button" class="outline-blue" id="login-button" disabled="true" onclick="loginWithFacebook()" onclick="login()">Login with Facebook</button>
+        </div>
+        <div>
             <button type="button" class="outline" onclick="register()">Register</button>
         </div>
         <div>
-            <button type="button" class="outline" onclick="loginAnonymously()">Anonymous Login</button>
+            <button type="button" class="outline" onclick="loginAnonymously()" onclick="login()">Anonymous Login</button>
         </div>
     </form>
 </body>

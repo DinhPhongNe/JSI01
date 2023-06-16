@@ -79,6 +79,13 @@ button.fab.right {
     border: none;
     color: rgb(45, 211, 111);
 }
+
+.outline-blue {
+    background: rgb(14,140,241);
+    color: white;
+    border: rgb(14,140,241);
+}
+
 .outline {
     background: transparent;
     color: white;
